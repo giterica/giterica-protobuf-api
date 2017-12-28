@@ -2,7 +2,7 @@ syntax = "proto3";
 
 service ServerAuth {
     rpc Auth (ServerAuthRequest) returns (ServerAuthResponse) {}
-    rpc IsLoginExists(string) returns (bool) {}
+    // rpc IsLoginExists(string) returns (bool) {}
 }
 
 // request from client to server
