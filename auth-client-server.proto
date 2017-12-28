@@ -2,15 +2,19 @@ syntax = "proto3";
 
 service ServerAuth {
     rpc Auth (ServerAuthRequest) returns (ServerAuthResponse) {}
+    rpc IsLoginExists(string) returns (bool) {}
 }
 
 // request from client to server
 message ServerAuthRequest {
+    // client may send any JSON to server
+    // server transparently send this JSON to auth plugin
     string json = 1;
 }
 
 message ServerAuthResponse {
     Error error = 1;
+    // server encode auth plugin response to JWT and sign it with $SECRET
     string jwt = 2;
 }
 
