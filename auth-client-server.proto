@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+service ServerAuth {
+    rpc Auth (ServerAuthRequest) returns (ServerAuthResponse) {}
+}
+
+// request from client to server
+message ServerAuthRequest {
+    string json = 1;
+}
+
+message ServerAuthResponse {
+    Error error = 1;
+    string jwt = 2;
+}
+
+message Error {
+    int32 code = 1;
+    string message = 2;
+}

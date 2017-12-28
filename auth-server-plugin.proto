@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+service PluginAuth {
+    rpc Auth (PluginAuthRequest) returns (PluginAuthResponse) {}
+}
+
+message PluginAuthRequest {
+    string json = 1;
+}
+
+message PluginAuthResponse {
+    User user = 1;
+}
+
+message User {
+    string login = 1;
+}
