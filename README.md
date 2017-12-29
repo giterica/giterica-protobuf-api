@@ -1,4 +1,4 @@
 In development
 ==============
 
-Protobuf API is the glue for different microservices.
+Protobuf/gRPC API. The glue for different parts of Giterica.
